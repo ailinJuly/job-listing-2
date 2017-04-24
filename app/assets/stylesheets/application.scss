@@ -17,15 +17,24 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+ //---------Navbar---------
+//给logo做定义
+ .navbar-brand > img {
+    display: inline-block;	//图片和链接文字显示在同一行
+    margin-right: 10px; //图片和链接文字拉开一点距离
+    width: 32px; //定制图片宽度
+    height: 32px; //定制图片高度
+}
+//导航栏目颜色等51A8DD
  .navbar-default {
-     background-color: #212121;
-     border-color: #212121;
+     background-color: #58B2DC;
+     border-color: #58B2DC;
      margin-bottom: 0;
      border-radius: 0;
  }
 
  .navbar-default .navbar-brand {
-     color: #EF6C00;
+     color: white;
      padding: 10px 15px;
      line-height: 30px;
  }
@@ -37,7 +46,7 @@
  }
 
  .navbar-default .navbar-nav > li > a {
-     color: #EF6C00;
+     color: black;
  }
 
  .navbar-default .navbar-nav > li > a:hover,
@@ -59,8 +68,28 @@
      background-color: #FFE0B2;
      color: #212121;
  }
+//给搜索栏加magin
+ .form-group {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+//把搜索栏目加宽
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    width: 250px; //加上width
+}
+//设定大图全屏
+  .container-fluid .jumbotron{
+   padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
+   margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+   border-radius: 0;//圆角为0
+ }
+
  .jumbotron {
-   background-image:url('http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-542213.png');
+   background-image:url("header.jpg");
+
    background-repeat: no-repeat;
    background-size: cover;
    padding-bottom: 110px;
@@ -113,3 +142,36 @@
   box-shadow: 3px 3px 0px transparent;
   transition: 0.5s;
 }
+ @media (min-width: 768px) {
+   .navbar {
+     border-radius: 0; //圆角为0
+   }
+ }
+
+ //---------Footer---------
+ footer {
+ color: white;
+ }
+ footer .footer-below {
+ padding: 25px 0;
+ background-color: #51A8DD;
+ }
+//搜索结果列表小白拷贝自戴建林
+
+ .jobs-show {
+   border-bottom: 1px dotted #CCC;
+   padding: 15px;
+   font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;
+ }
+
+
+
+ /* Search.html.erb
+ */
+
+ .search-info-title {
+   font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;
+   color: #EC407A;
+   font-size: 20px;
+   text-align: left;
+ }

@@ -19,6 +19,7 @@
     <thead>
         <tr>
             <td>Title</td>
+            <td>Company</td>
             <td>wage_lower_bound</td>
             <td>wage_upper_bound</td>
             <td>created_at</td>
@@ -28,6 +29,7 @@
         <% @jobs.each do |job| %>
             <tr>
                 <td><%= link_to(job.title, job_path(job)) %></td>
+                <td><%= job.company %></td>
                 <td><%= job.wage_lower_bound %></td>
                 <td><%= job.wage_upper_bound %></td>
                 <td><%= job.created_at %></td>

@@ -1,9 +1,16 @@
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Job Listing </a>
+            <a class="navbar-brand" href="/"><img src='<%= image_url 'logo1.png' %>' >Spring Offer</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <div class="form-group form-inline search-bar">
+                        <%= render :partial =>"jobs/search_bar" %>
+                    </div>
+                </li>
+            </ul>
             <ul class="nav navbar-nav navbar-right">
                 <% if !current_user %>
                     <li><%= link_to("注册", new_user_registration_path) %></li>
@@ -11,7 +18,7 @@
                 <% else %>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Hi!, <%= current_user.email %>
+                            Hi!, <%= current_user.name %>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
@@ -26,3 +33,4 @@
         </div>
     </div>
 </nav>
+<div>Icons made by <a href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
