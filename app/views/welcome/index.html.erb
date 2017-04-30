@@ -1,40 +1,143 @@
-<div class="jumbotron">
-    <h1 class="title">春～等到你！</h1>
-    <p class="slogan">一年之际在于春，这是一个专为毕业生提供的招聘网站！
-        <br>
-        我们，
-        <br>
-        一直在等你！
-    </p>
-    <p class="lead"><a class="btn btn-lg btn-danger" href="/jobs">马上应征</a></p>
+<div class="col-md-12">
+    <div class="row box">
+        <div class="box-inner col-md-6 ">
+            <h1 class="title">Cats Homeland</h1>
+            <p class="slogan">Cats Homeland专门收养流浪猫，
+                <br>
+                并用我们的力量为猫猫找到新主人。
+                <br>
+                通过这里，你找到一个它。
+                <br>
+                快来提交申请，给它一个温暖的家。
+            </p>
+            <p class="lead">
+                <%= link_to '来领它吧', jobs_path, class: 'btn btn-danger' %>
+                <%= link_to '帮它找主人吧', admin_jobs_path, class: 'btn btn-info' %>
+            </p>
+        </div>
+    </div>
 </div>
-<section id="company">
-    <div class = "container">
+<div class="content-section-a">
+    <div class="container">
         <div class="row">
-            <div class="col-sm-4 ">
-                <div class="thumbnail">
-                    <img src="http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-Screenshot%20at%20Apr%2015%2021-43-31.png" alt="search" class = "img-thumbnail">
-                    <div class="caption">
-                        <h3>北京朝阳建外SOHO</h3>
-                    </div>
-                </div>
+            <div class="col-lg-5 col-sm-6">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h1 class="section-heading">爱猫人士拍的一个视频</h1>
+                <p class="lead">有网友以流浪猫的视角拍摄了一段视频分享给你们</p>
             </div>
-            <div class="col-sm-4 ">
-                <div class="thumbnail">
-                    <img src="http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-Screenshot%20at%20Apr%2015%2021-43-48.png" alt="bid" class = "img-thumbnail">
-                    <div class="caption">
-                        <h3>info@18koffer.com</h3>
-                    </div>
-                </div>
+            <div class="col-lg-5 col-lg-offset-0 col-sm-6">
+                <%= video_tag "cat.mp4", loop: :loop, mute: :mute, :controls => true, class: "video" %>
             </div>
-            <div class="col-sm-4 ">
-                <div class="thumbnail">
-                    <img src="http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-Screenshot%20at%20Apr%2015%2021-44-00.png" alt="heart" class = "img-thumbnail">
-                    <div class="caption">
-                        <h3>010-12344321</h3>
-                    </div>
+        </div>
+    </div>
+    <div class="content-section-b">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">小猫送出前保证健康</h2>
+                    <p class="lead">请收到小猫后，再去宠物医院做一次检查哦！</p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <%= image_tag 'cat1.jpeg', class: 'img-responsive' %>
                 </div>
             </div>
         </div>
     </div>
-</section>
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">我们提供太空舱送猫猫安全到新家
+                        <h2>
+                            <p class="lead">如果你不会养猫，就一定要多上网寻求帮助，例如<a target="_blank" href="http://ailinjuly-blog.logdown.com">Ailin 的 Blog</a>! 啦啦啦啦啦啦啦</p>
+                        </div>
+                        <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                            <%= image_tag 'cathouse.jpg', class: 'img-responsive' %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--开始slide-->
+            <!-- Add this css File in head tag-->
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+            <!--
+                   If you want to change #bootstrap-touch-slider id then you have to change Carousel-indicators and Carousel-Control  #bootstrap-touch-slider slide as well
+                   Slide effect: slide, fade
+                   Text Align: slide_style_center, slide_style_left, slide_style_right
+                   Add Text Animation: https://daneden.github.io/animate.css/
+                   -->
+            <div id="bootstrap-touch-slider" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
+                    <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
+                    <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
+                </ol>
+                <!-- Wrapper For Slides -->
+                <div class="carousel-inner" role="listbox">
+                    <!-- Third Slide -->
+                    <div class="item active">
+                        <!-- Slide Background -->
+                        <img src="https://static.pexels.com/photos/45170/kittens-cat-cat-puppy-rush-45170.jpeg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                        <div class="bs-slider-overlay"></div>
+                        <div class="container">
+                            <div class="row">
+                                <!-- Slide Text Layer -->
+                                <div class="slide-text slide_style_left">
+                                    <h1 data-animation="animated zoomInRight">我们童年时养过的那些猫咪</h1>
+                                    <p data-animation="animated fadeInLeft">小时候，养过两只猫，一只被妈妈送走了，一只自己跳到鱼缸中淹死了。
+                                        <br>
+                                        至今还记得6岁的我爬到床底下帮猫猫擦💩的事情......</p>
+                                    <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">select one</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Slide -->
+                    <!-- Second Slide -->
+                    <div class="item">
+                        <!-- Slide Background -->
+                        <img src="https://static.pexels.com/photos/26897/pexels-photo-26897.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                        <div class="bs-slider-overlay"></div>
+                        <!-- Slide Text Layer -->
+                        <div class="slide-text slide_style_center">
+                            <h2 data-animation="animated zoomInRight">She says：</h2>
+                            <p data-animation="animated lightSpeedIn">While cats love to be near you, they are also cool about giving you space when they know that you need it.
+                                <br>
+                                Cats are loving, have the ability to read our emotions, and make us feel special with their desire to be near us whenever we are around.</p>
+                        </div>
+                    </div>
+                    <!-- End of Slide -->
+                    <!-- Third Slide -->
+                    <div class="item">
+                        <!-- Slide Background -->
+                        <img src="https://images.pexels.com/photos/144345/pexels-photo-144345.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                        <div class="bs-slider-overlay"></div>
+                        <!-- Slide Text Layer -->
+                        <div class="slide-text slide_style_right">
+                            <h1 data-animation="animated zoomInLeft">Beautiful Animations</h1>
+                            <p data-animation="animated fadeInRight">Lots of css3 Animations to make slide beautiful .</p>
+                            <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">select one</a>
+                            <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-primary" data-animation="animated fadeInRight">select two</a>
+                        </div>
+                    </div>
+                    <!-- End of Slide -->
+                </div>
+                <!-- End of Wrapper For Slides -->
+                <!-- Left Control -->
+                <a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+                    <span class="fa fa-angle-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <!-- Right Control -->
+                <a class="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
+                    <span class="fa fa-angle-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>

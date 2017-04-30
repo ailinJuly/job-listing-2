@@ -17,48 +17,42 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
- //---------Navbar---------
-//给logo做定义
- .navbar-brand > img {
-    display: inline-block;	//图片和链接文字显示在同一行
-    margin-right: 10px; //图片和链接文字拉开一点距离
-    width: 32px; //定制图片宽度
-    height: 32px; //定制图片高度
-}
-//导航栏目颜色等
- .navbar-default {
-     background-color: #58B2DC;
-     border-color: #58B2DC;
 
+ //---------Navbar---------
+
+ .navbar-default {
+     background-color: #212121;
+     border-color: #212121;
+     margin-bottom: 0;
      border-radius: 0;
  }
 
  .navbar-default .navbar-brand {
-     color: white;
+     color: #EF6C00;
      padding: 10px 15px;
      line-height: 30px;
  }
 
  .navbar-default .navbar-brand:hover,
  .navbar-default .navbar-brand:focus {
-     color: #08192D;
+     color: #FF6F00;
      background-color: transparent;
  }
 
  .navbar-default .navbar-nav > li > a {
-     color: black;
+     color: #EF6C00;
  }
 
  .navbar-default .navbar-nav > li > a:hover,
  .navbar-default .navbar-nav > li > a:focus {
-     color: #08192D;
+     color: #FF6F00;
      background-color: transparent;
  }
 
  .navbar-default .navbar-nav > .active > a,
  .navbar-default .navbar-nav > .active > a:hover,
  .navbar-default .navbar-nav > .active > a:focus {
-     color: #08192D;
+     color: #FF6F00;
      background-color: #FFE0B2;
  }
 
@@ -66,155 +60,85 @@
  .navbar-default .navbar-nav > .open > a:focus,
  .navbar-default .navbar-nav > .open > a:hover {
      background-color: #FFE0B2;
-     color: #58B2DC;
+     color: #212121;
  }
-//注册画面
-body{
-background-image: linear-gradient(#79a06d, #79a06d);
-}
-#box{
-    border: 1px solid rgb(200, 200, 200);
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px 2px;
-    background: rgba(200, 200, 200, 0.1);
-    border-radius: 4px;
-    top:50px;
-}
-h2{
-    text-align:center;
-    color:#fff;
-}
-//给搜索栏加magin
- .form-group {
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-//把搜索栏目加宽
-.input-group {
-    position: relative;
-    display: table;
-    border-collapse: separate;
-    width: 250px; //加上width
-}
-//设定大图全屏
-  .container .jumbotron{
-   padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
-   margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
-   border-radius: 0;//圆角为0
- }
+ .input-group{
+   position:absolute;
+left:10%
 
- .jumbotron {
-   background-image:url("header.jpg");
+ }
+ //---------Box---------
 
-   background-repeat: no-repeat;
-   background-size: cover;
-   padding-bottom: 110px;
- }
- .jumbotron h1, .jumbotron .h1 {
-     text-align: left;//文字左对齐
-     color: #222;	//字体颜色
-     padding: 50px 20px 0;//上50px，左右20px，下0
- }
+.box {
+    background-image: url("header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 50px;
 
- .jumbotron p {
-     margin: 0;//上下左右margin为0
-     font-size: 26px;//字体大小
-     max-width: 500px;//最大宽度
-     background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
-     padding: 20px;//上下左右padding为20px
-     text-align:left;//文字左对齐
-     color: #222;//字体颜色
-     border-bottom-right-radius: 3px;//右下角圆边
-     border-bottom-left-radius: 3px;//左下角圆边
- }
- .title {
-   background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
-   max-width: 500px;//最大宽度
-   margin-top: 200px;//和顶部拉开距离
-   margin-bottom: 0;//这样就可以紧接息面的描述文字
-   border-top-right-radius: 3px;//右上角圆边
-   border-top-left-radius: 3px;//左上角圆边
- }
+    .box-inner {
+        background-color: rgba(250, 250, 250, 0.69);
+        padding-bottom: 5px;
+        margin-top: 150px;
+        margin-bottom: 150px;
+    }
 
- .slogan {
-   margin-top: 10px;
-   margin-bottom: 50px;
-   text-align: left;
-   color: white;
-   top: 12px;
- }
+    .title {
+        text-align: center;
+        margin-bottom: 80px;
+    }
 
- .lead {
-   margin-bottom: 60px;
-   text-align: left;
-   color: white;
- }
+    .slogan {
+        color: #222;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        text-align: center;
+        font-size: 25px;
+        top: 12px;
+    }
 
- .caption {
-  margin: 30px;
-  text-align: center;
-  top: 20px;
+    .lead {
+        margin-bottom: 60px;
+        text-align: center;
+        color: white;
+    }
 }
 
-.thumbnail {
-    border: 0 none;
-    box-shadow: none;
-    margin-top: 60px;
+//---------Content---------
+
+.content-section-a {
+    padding: 50px 0;
+    background-color: #f8f8f8;
 }
 
-.custab{
-  border: 1px solid #ccc;
-
-  padding: 5px;
-  margin: 5% 0;
-  box-shadow: 3px 3px 2px #ccc;
-
-  transition: 0.5s;
+.content-section-b {
+    padding: 50px 0;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
 }
 
-.custab:hover{
-  box-shadow: 3px 3px 0px transparent;
-  transition: 0.5s;
+.section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
 }
- @media (min-width: 768px) {
-   .navbar {
-     border-radius: 0; //圆角为0
-   }
- }
 
-  //---------common---------
+.section-heading {
+    margin-bottom: 30px;
+}
 
-  .col-centered{
-
-    float: none;
-    margin: 0 auto;
+.lead {
+    font-size: 18px;
+    font-weight: 400;
+}
 
 
-  }
+//---------Footer---------
 
- //---------Footer---------
  footer {
- color: white;
+     color: white;
  }
+
  footer .footer-below {
- padding: 20px 0;
- background-color: #EEEEEE;
- }
-//搜索结果列表小白拷贝自戴建林
-
- .jobs-show {
-   border-bottom: 1px dotted #CCC;
-   padding: 15px;
-   font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;
- }
-
-
-
- /* Search.html.erb
- */
-
- .search-info-title {
-   font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;
-   color: #EC407A;
-   font-size: 20px;
-   text-align: left;
+     padding: 25px 0;
+   background-color: #233140;
  }

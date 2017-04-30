@@ -4,7 +4,6 @@ class ResumesController < ApplicationController
      @job = Job.find(params[:job_id])
      @resume = Resume.new
   end
-
   def create
     @job = Job.find(params[:job_id])
     @resume = Resume.new(resume_params)
@@ -14,15 +13,10 @@ class ResumesController < ApplicationController
     if @resume.save
       flash[:notice] = "成功提交简历"
       redirect_to job_path(@job)
-
     else
       render :new
-
     end
-
-
 end
-
   private
   def resume_params
   params.require(:resume).permit(:content, :attachment)

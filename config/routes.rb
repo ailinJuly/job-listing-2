@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       collection do
           get :search
       end
-      resources :resumes
+   resources :resumes
   end
 
 end
