@@ -21,10 +21,11 @@ Rails.application.routes.draw do
    resources :resumes
   end
 
-
   resources :jobs do
-  put :favorite, on: :member
-  resources :favorite do
+    put :favorite, on: :member
   end
-end
+
+  resources :favorite
+
+
 end
