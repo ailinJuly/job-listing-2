@@ -16,4 +16,8 @@ class Job < ApplicationRecord
   validates :wage_upper_bound, presence: true
   validates :wage_lower_bound, numericality: { greater_than: 0}
   has_many :resumes
+
+  belongs_to :user
+has_many :favorites
+has_many :members, through: :favorites, source: :user
 end
