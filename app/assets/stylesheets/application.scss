@@ -62,11 +62,25 @@
      background-color: #FFE0B2;
      color: #212121;
  }
+// －－－－导航栏－－－－
+ .navbar-brand{
+   padding: 10px 15px 10px 15px;
+ }
  .input-group{
-   position:absolute;
-left:10%
+  padding: 6px 12px 6px 12px;
 
  }
+
+ .row{
+  margin-left: -15px;
+  margin-right: -15px;
+ }
+ .body{
+   font-family: Hiragino SansGB,Lantinghei SC,Open Sans,Arial,Microsoft Yahei,sans-serif;
+
+ }
+
+
  //---------Box---------
 
 .box {
@@ -86,7 +100,7 @@ left:10%
 
     .title {
         text-align: center;
-        margin-bottom: 80px;
+        margin-bottom: 40px;
     }
 
     .slogan {
@@ -99,10 +113,14 @@ left:10%
     }
 
     .lead {
-        margin-bottom: 60px;
-        text-align: center;
-        color: white;
+    margin-top: 40px;
+    margin-bottom: 230px;
+    text-align: center;
+    color: white;
+    .b-btn {
+      padding: 10px 20px;
     }
+  }
 }
 
 //---------Content---------

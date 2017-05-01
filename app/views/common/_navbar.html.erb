@@ -1,36 +1,59 @@
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/"><img src='<%= image_url 'logo.png' %>' >Cats Homeland</a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li>
-                    <div class="form-group form-inline search-bar">
-                        <%= render :partial =>"jobs/search_bar" %>
-                    </div>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <% if !current_user %>
-                    <li><%= link_to("注册", new_user_registration_path) %></li>
-                    <li><%= link_to("登入", new_user_session_path) %></li>
-                <% else %>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Hi!, <%= current_user.name %>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <% if current_user.admin?%>
-                                <li><%= link_to("Admin panel", admin_jobs_path) %></li>
-                            <% end %>
-                            <li><%= link_to('<span class="glyphicon glyphicon-floppy-saved"></span> 已收藏的职位'.html_safe, favorite_index_path) %></li>
-                            <li><%= link_to('<span class="glyphicon glyphicon-log-out"></span> 登出'.html_safe,destroy_user_session_path, method: :delete) %></li>
-                        </ul>
-                    </li>
-                <% end %>
-            </ul>
-        </div>
-    </div>
-</nav>
+<div class="row">
+    <nav class="navbar navbar-default transparent" role="navigation" id="navbar" style="">
+        <div class="container" style="">
+            <div class="container-fluid" style="">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header" style="">
+                    <a class="navbar-brand" style="" img src='<%= image_url 'logo.png' %>' >Cats Homeland</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/" style="">首页</a></li>
+                        <li><a href="/jobs" style="">我收藏的猫咪</a></li>
+                    </ul>
+                    <!-- <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/users/sign_in" style="">登录</a></li>
+                        <li>
+                            <a href="/users/sign_up" style="">注册</a>
+                        </li>
+                    </ul> -->
+                    <!-- <ul class="nav navbar-nav">
+                        <li>
+                            <div class="form-group form-inline search-bar">
+                                <%= render :partial =>"jobs/search_bar" %>
+                            </div>
+                        </li>
+                    </ul> -->
+                    <form class="navbar-form navbar-right" action="/jobs/search" accept-charset="UTF-8" method="get" style=""><input name="utf8" type="hidden" value="✓">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="q" placeholder="搜索你爱的猫咪" value="" style="">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit" style="">
+                                    <i class="fa fa-search" aria-hidden="true" style=""></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <% if !current_user %>
+                            <li><%= link_to("注册", new_user_registration_path) %></li>
+                            <li><%= link_to("登入", new_user_session_path) %></li>
+                        <% else %>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    Hi!, <%= current_user.name %>
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <% if current_user.admin?%>
+                                        <li><%= link_to("Admin panel", admin_jobs_path) %></li>
+                                    <% end %>
+                                    <li><%= link_to('<span class="glyphicon glyphicon-floppy-saved"></span> 已收藏的职位'.html_safe, favorite_index_path) %></li>
+                                    <li><%= link_to('<span class="glyphicon glyphicon-log-out"></span> 登出'.html_safe,destroy_user_session_path, method: :delete) %></li>
+                                </ul>
+                            </li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </nav>
