@@ -1,4 +1,4 @@
-<div class="col-md-8 col-centered">
+<div class="col-md-12 col-centered">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3>已收藏的猫猫
@@ -8,12 +8,12 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-                        <li>
-                            <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
-                        </li>
-                        <li>
-                            <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
-                        </li>
+                        <!-- <li>
+                                <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+                            </li>
+                            <li>
+                                <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+                            </li> -->
                         <li>
                             <%= link_to("按照发表时间排序", jobs_path ) %>
                         </li>
@@ -21,23 +21,19 @@
                 </div>
             </h3>
             <div class="panel-body">
-                <table class="table table-boldered">
+                <table class="table table-boldered table-striped custab">
                     <thead>
                         <tr>
-                            <td>Title</td>
-                            <td>Company</td>
-                            <td>wage_lower_bound</td>
-                            <td>wage_upper_bound</td>
-                            <td>created_at</td>
+                            <td>职缺</td>
+                            <td>描述</td>
+                            <td>刊登时间</td>
                         </tr>
                     </thead>
                     <tbody>
                         <% @jobs.each do |job| %>
                             <tr>
                                 <td><%= link_to(job.title, job_path(job)) %></td>
-                                <td><%= job.company %></td>
-                                <td><%= job.wage_lower_bound %></td>
-                                <td><%= job.wage_upper_bound %></td>
+                                <td><%= job.description %></td>
                                 <td><%= job.created_at %></td>
                             </tr>
                         <% end %>
