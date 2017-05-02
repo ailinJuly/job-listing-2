@@ -8,11 +8,13 @@
         <link rel="shortcut icon" href="/images/logo.ico">
     </head>
     <body>
-        <%= render "common/flashes" %>
-        <div class="container-fluid">
-            <div class="row">
-                <%= render "common/navbar" %>
-                <%= yield %>
+        <div class="main" style="margin-bottom: 100px;">
+            <div class="container-fluid">
+                <div class="row">
+                    <%= render "common/navbar" %>
+                    <%= render "common/flashes" %>
+                    <%= yield %>
+                </div>
             </div>
         </div>
         <%= render "common/footer" %>
