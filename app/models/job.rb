@@ -12,9 +12,9 @@ class Job < ApplicationRecord
   end
 
   validates :title, presence: true
-  validates :wage_lower_bound, presence: true
-  validates :wage_upper_bound, presence: true
-  validates :wage_lower_bound, numericality: { greater_than: 0}
+  # validates :wage_lower_bound, presence: true
+  # validates :wage_upper_bound, presence: true
+  # validates :wage_lower_bound, numericality: { greater_than: 0}
   has_many :resumes
 
   belongs_to :user

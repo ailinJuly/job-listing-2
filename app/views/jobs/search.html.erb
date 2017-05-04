@@ -1,11 +1,13 @@
 <br>
 <% if @query_string.blank? %>
-    <div class="search-info-title">
+    <div class="alert alert-danger" role="alert">
         Sorry, The search content cannot be blank, please type some product into to search.
     </div>
 <% elsif @jobs.blank? %>
     <br>
-    <h2 class="search-info-title">搜索信息不能为空，请输入关键字搜索</h2>
+    <div class="alert alert-danger" role="alert">
+        搜索信息不能为空，请输入关键字搜索
+    </div>
 <% else %>
     <%= render :partial => "search_result", :collection => @jobs, :as => :job%>
 <% end %>

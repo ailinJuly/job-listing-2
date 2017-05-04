@@ -28,7 +28,8 @@ class Admin::JobsController < ApplicationController
     else
       render :new
     end
-    end
+  end
+
   def update
     @job = Job.find(params[:id])
 
@@ -38,6 +39,7 @@ class Admin::JobsController < ApplicationController
       render :edit
     end
   end
+
   def destroy
       @job = Job.find(params[:id])
 
@@ -45,6 +47,7 @@ class Admin::JobsController < ApplicationController
     redirect_to admin_jobs_path
       flash[:alert] = 'deleted!'
   end
+
   def publish
     @job = Job.find(params[:id])
 
@@ -52,6 +55,7 @@ class Admin::JobsController < ApplicationController
 
       redirect_to :back
   end
+
   def hide
     @job = Job.find(params[:id])
 
@@ -60,11 +64,8 @@ class Admin::JobsController < ApplicationController
       redirect_to :back
   end
 
-
-
-
   private
     def job_params
-    params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden, :category, :city, :company)
+    params.require(:job).permit(:title, :description,:contact_email, :is_hidden, :category)
   end
 end
