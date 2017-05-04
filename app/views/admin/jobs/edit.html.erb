@@ -1,12 +1,23 @@
-<h1>Edit a job</h1>
-<%= simple_form_for [:admin, @job] do |f| %>
-    <%= f.input :title,label:'职位名称' %>
-    <%= f.input :description, label: '职位介绍'%>
-    <%= f.input :category, label: '职位类型' %>
-    <%= f.input :company, label:'公司名称' %>
-    <%= f.input :wage_lower_bound, :label => "薪资下限" %>
-    <%= f.input :wage_upper_bound, :label => "薪资上限" %>
-    <%= f.input :contact_email %>
-    <%= f.input :is_hidden %>
-    <%= f.submit "Submit" %>
-<% end %>
+<div class="col-md-10" sytle="overflow:auto">
+    <div class="col-md-6 col-centered ">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>猫猫信息修改</h2>
+            </div>
+            <div class="panel-body">
+                <div class="form-box">
+                    <%= simple_form_for [:admin, @job] do |f| %>
+                        <%= f.input :title, label: false, error: '请输入猫猫小名', placeholder: '猫猫小名', required: true, autofocus: true, input_html: { class: "form-control"} %>
+                        <%= f.input :description, label: '猫猫生涯介绍' %>
+                        <%= f.input :category, label: '品种' %>
+                        <%= f.input :contact_email, input_html: { maxlength: 16 } %>
+                        <%= f.input :is_hidden, :label => false, as: :radio_buttons, collection:  [['显示', false], ['隐藏', true]] %>
+                        <div class="form-actions text-right">
+                            <%= f.submit "Submit", disable_with: "Submiting...", class: "btn btn-primary"%>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,11 +1,10 @@
-<div class="col-md-6 col-centered">
-    <div class="panel panel-info">
+<div class="col-md-6 col-centered" style="padding-top: 20px">
+    <div class="panel panel-success">
         <div class="panel-heading">
-            <h1> <%= @job.title %></h1>
+            <h3 class="panel-title"><%= @job.title %></h3>
         </div>
         <div class="panel-body">
-            <p>
-                <%= simple_format(@job.description) %>
-            </p>
+            <%= simple_format(@job.description) %>
         </div>
     </div>
+</div>

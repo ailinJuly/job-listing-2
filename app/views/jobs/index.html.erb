@@ -1,53 +1,46 @@
-<div class="col-md-8 col-centered">
+<div class="col-md-12 col-centered" style="padding-top:20px">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3>求职列表
+            <h3>猫猫都在这里
                 <div class="dropdown clearfix pull-right">
                     <button class="btn btn-default dropdown-toggle" type ="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        排序
+                        猫猫们排队
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-                        <li>
+                        <!-- <li>
                             <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
                         </li>
                         <li>
                             <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
-                        </li>
+                        </li> -->
                         <li>
                             <%= link_to("按照发表时间排序", jobs_path ) %>
                         </li>
                     </ul>
                 </div>
             </h3>
-            <div class="panel-body">
-                <table class="table table-boldered">
-                    <thead>
+            <!-- <div class="panel-body"> -->
+            <table class="table table-boldered">
+                <thead>
+                    <tr>
+                        <td>猫猫小名</td>
+                        <td>品种</td>
+                        <td>猫猫生涯</td>
+                        <td>这条纪录创建时间</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @jobs.each do |job| %>
                         <tr>
-                            <td>Title</td>
-                            <td>Company</td>
-                            <td>wage_lower_bound</td>
-                            <td>wage_upper_bound</td>
-                            <td>created_at</td>
+                            <td><%= link_to(job.title, job_path(job)) %></td>
+                            <td><%= job.category %></td>
+                            <td><%= job.description %></td>
+                            <td><%= job.created_at %></td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <% @jobs.each do |job| %>
-                            <% if current_user && current_user.is_favorite_of?(job) %>
-                                <%= link_to('取消收藏'.html_safe, favorite_job_path(job, type: "unfavorite"), method: :put) %>
-                            <% else %>
-                                <%= link_to('添加收藏'.html_safe, favorite_job_path(job, type: "favorite"), method: :put) %>
-                            <% end %>
-                            <tr>
-                                <td><%= link_to(job.title, job_path(job)) %></td>
-                                <td><%= job.company %></td>
-                                <td><%= job.wage_lower_bound %></td>
-                                <td><%= job.wage_upper_bound %></td>
-                                <td><%= job.created_at %></td>
-                            </tr>
-                        <% end %>
-                    </tbody>
-                </table>
-            </div>
+                    <% end %>
+                </tbody>
+            </table>
+            <!-- </div> -->
         </div>
     </div>

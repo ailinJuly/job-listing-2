@@ -1,13 +1,12 @@
 <div class="pull-right">
-    <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-default" ) %>
+    <%= link_to("有新猫猫加入啦！", new_admin_job_path, :class => "btn btn-success" ) %>
 </div>
 <table class="table table-boldered table-striped custab">
     <thead>
         <tr>
-            <td>职缺</td>
-            <td>收到简历数量</td>
-            <td>薪资下限</td>
-            <td>薪资上限</td>
+            <td>猫猫小名</td>
+            <td>品种</td>
+            <td>收到领养申请数量</td>
             <td>管理选项</td>
             <td>刊登时间</td>
         </tr>
@@ -16,9 +15,9 @@
         <tr>
             <td><%= render_job_status(job)  %>
                 <%= link_to(job.title, admin_job_path(job)) %></td>
+            <td>
+                <%= link_to(job.category, admin_job_path(job)) %></td>
             <td><%= link_to(job.resumes.count, admin_job_resumes_path(job)) %></td>
-            <td><%= job.wage_lower_bound %></td>
-            <td><%= job.wage_upper_bound %></td>
             <td>
                 <%= link_to edit_admin_job_path(job), class: "btn btn-xs btn-info" do %><i class="fa fa-pencil"></i><% end %>
                 <%= link_to admin_job_path(job), :method => :delete, :class => "btn btn-xs  btn-danger", :data => { :confirm => "Are you sure?" } do %><i class="fa fa-trash-o"></i><% end %>

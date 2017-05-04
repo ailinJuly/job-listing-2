@@ -1,96 +1,80 @@
-<div class="row">
-    <nav class="navbar navbar-default transparent" role="navigation" id="navbar" style="">
-        <div class="container" style="">
-            <div class="container-fluid" style="">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header" style="">
-                    <a class="navbar-brand" style="" img src='<%= image_url 'logo.png' %>' >Cats Homeland</a>
-                </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="">
-                    <ul class="nav navbar-nav">
-                        <li><a href="/" style="">首页</a></li>
-                        <li><a href="/favorite" style="">我收藏的猫咪</a></li>
-                        <!-- <li><%= link_to('<span class="glyphicon glyphicon-floppy-saved"></span> 已收藏的职位'.html_safe, favorite_index_path) %></li> -->
-                    </ul>
-                    <!-- <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/users/sign_in" style="">登录</a></li>
-                        <li>
-                            <a href="/users/sign_up" style="">注册</a>
-                        </li>
-                    </ul> -->
-                    <!-- <ul class="nav navbar-nav">
-                        <li>
-                            <div class="form-group form-inline search-bar">
-                                <%= render :partial =>"jobs/search_bar" %>
-                            </div>
-                        </li>
-                    </ul> -->
-                    <form class="navbar-form navbar-right" action="/jobs/search" accept-charset="UTF-8" method="get" style=""><input name="utf8" type="hidden" value="✓">
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="q" placeholder="搜索你爱的猫咪" value="" style="">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit" style="">
-                                    <i class="fa fa-search" aria-hidden="true" style=""></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                    <ul class="nav navbar-nav navbar-right">
-                        <% if !current_user %>
-                            <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
-                            <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
-                        <% else %>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    Hi!, <%= current_user.name %>
-                                    <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <!-- <% if current_user.admin?%>
-                                        <li><%= link_to("Admin panel", admin_jobs_path) %></li>
-                                    <% end %> -->
-                                    <!-- <li><%= link_to('<span class="glyphicon glyphicon-floppy-saved"></span> 已收藏的职位'.html_safe, favorite_index_path) %></li> -->
-                                    <li><%= link_to('<span class="glyphicon glyphicon-log-out"></span> 登出'.html_safe,destroy_user_session_path, method: :delete) %></li>
-                                </ul>
-                            </li>
-                        <% end %>
-                    </ul>
-                </div>
+<nav class="navbar navbar-default transparent" role="navigation" id="navbar" style="">
+    <div class="container" style="">
+        <div class="container-fluid" style="">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header" style="">
+                <a class="navbar-brand" style="" img src='<%= image_url 'logo.png' %>' >Cats Homeland</a>
             </div>
-        </nav>
-        <!-- 弹窗效果 -->
-        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-            <div class="modal-dialog" role="document">
-                <div class="loginmodal-container">
-                    <h2>Log in</h2>
-                    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                        <div class="form-inputs">
-                            <%= f.input :email, required: false, autofocus: true %>
-                            <%= f.input :password, required: false %>
-                            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="">
+                <ul class="nav navbar-nav">
+                    <li><a href="/" style="">首页</a></li>
+                </ul>
+                <form class="navbar-form navbar-right" action="/jobs/search" accept-charset="UTF-8" method="get" style=""><input name="utf8" type="hidden" value="✓">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="q" placeholder="搜索你爱的猫咪" value="" style="">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit" style="">
+                                <i class="fa fa-search" aria-hidden="true" style=""></i>
+                            </button>
                         </div>
-                        <div class="form-actions">
-                            <%= f.button :submit, "Log in" %>
-                        </div>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <% if !current_user %>
+                        <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
+                    <% else %>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Hi,  <%= current_user.name %>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/favorite" style="">我收藏的猫咪<i class="fa fa-heart" aria-hidden="true"></i></a></li>
+                                <li><%= link_to('登出'.html_safe,destroy_user_session_path, method: :delete) %></li>
+                            </ul>
+                        </li>
                     <% end %>
-                </div>
+                </ul>
             </div>
         </div>
-        <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-            <div class="modal-dialog">
-                <div class="loginmodal-container">
-                    <h2>Sign up</h2>
-                    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-                        <%= f.error_notification %>
-                        <div class="form-inputs">
-                            <%= f.input :email, required: true, autofocus: true %>
-                            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-                            <%= f.input :password_confirmation, required: true %>
-                        </div>
-                        <div class="form-actions">
-                            <%= f.button :submit, "Sign up" %>
-                        </div>
-                    <% end %>
+    </div>
+</nav>
+<!-- 弹窗效果 -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="loginmodal-container">
+            <h2>Log in</h2>
+            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="form-inputs">
+                    <%= f.input :email, required: false, autofocus: true %>
+                    <%= f.input :password, required: false %>
+                    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
                 </div>
-            </div>
+                <div class="form-actions">
+                    <%= f.button :submit, "Log in" %>
+                </div>
+            <% end %>
         </div>
+    </div>
+</div>
+<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <h2>Sign up</h2>
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= f.error_notification %>
+                <div class="form-inputs">
+                    <%= f.input :email, required: true, autofocus: true %>
+                    <%= f.input :name, required: true %>
+                    <%= f.input :is_admin, as: :radio_buttons, collection: [['领养人',false],['网站工作人员',true]], required: true %>
+                    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+                    <%= f.input :password_confirmation, required: true %>
+                </div>
+                <div class="form-actions">
+                    <%= f.button :submit, "Sign up" %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

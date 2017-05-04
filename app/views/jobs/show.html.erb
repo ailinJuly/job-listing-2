@@ -1,11 +1,22 @@
 <div class="col-md-12 col-centered">
     <div class="panel panel-default">
-        <h2 class="job_title"><%= @job.title %></h2>
-        <p>
-            <%= simple_format(@job.description) %>
-        </p>
-        <div class="text-center">
-            <%= link_to("这里请提交你的领养申请哦！", new_job_resume_path(@job),:style => "font-size: 30px; text-decoration: underline;" ) %>
+        <div class="panel-heading">
+            <h2 class="job_title"><%= @job.title %></h2>
+        </div>
+        <div class="panel-body">
+            <p>
+                <%= simple_format(@job.description) %>
+                <% if current_user && current_user.is_favorite_of?(@job) %>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <%= link_to('取消收藏'.html_safe, favorite_job_path(@job, type: "unfavorite"), method: :put) %>
+                <% else %>
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    <%= link_to('添加收藏'.html_safe, favorite_job_path(@job, type: "favorite"), method: :put) %>
+                <% end %>
+            </p>
+            <div class="text-center">
+                <%= link_to("点击这里来领养吧！", new_job_resume_path(@job),:style => "font-size: 30px; text-decoration: underline;" ) %>
+            </div>
         </div>
     </div>
 </div>
