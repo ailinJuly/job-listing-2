@@ -12,7 +12,7 @@ name_info= [["小黄","2个月的小猫公主","折耳"] ,["米米","5个月公�
 
 puts "這個種子檔會自動建立一個admin帳號, 並且創建 10 個 public jobs, 以及10個hidden jobs"
 
-create_account = User.create([email: 'admin@test.com', password: '123456', password_confirmation: '123456', is_admin: 'true'])
+create_account = User.create([email: 'admin@test.com', name:'admin',password: '123456', password_confirmation: '123456', is_admin: 'true'])
 puts "Admin account created."
 
 create_jobs = for i in 1..3 do
