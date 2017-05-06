@@ -1,3 +1,33 @@
-<h2><%= @job.title %>-爱的呼唤</h2>
-<hr>
-<%= render :partial =>"resume", :collection => @resumes, :as => :resume %>
+<div class="col-md-12" style="height:600px;padding-top:50px">
+    <h2><%= @job.title %>-爱的呼唤</h2>
+    <hr>
+    <div class="col-md-8" style="height:600px">
+        <table class="table table-boldered table-striped custab">
+            <thead>
+                <tr>
+                    <td>领养人</td>
+                    <td>领养描述</td>
+                    <td>想要领养的猫猫图片</td>
+                </tr>
+            </thead>
+            <% @resumes.each do |resume| %>
+                <tbody>
+                    <tr>
+                        <td><%= resume.user.name %></td>
+                        <td>
+                            <%= simple_format(resume.content)%>
+                        </td>
+                        <% if resume.attachment.present? %>
+                            <td><i class="fa fa-paperclip"></i>
+                                <%= link_to("Download Pic",resume.attachment_url) %></td>
+                        <% else %>
+                            <td>
+                                没有上传图片</td>
+                        <% end %>
+                    </tr>
+                </tbody>
+            <% end %>
+        </table>
+    </div>
+</div>
+</div>

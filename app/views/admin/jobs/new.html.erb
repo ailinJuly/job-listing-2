@@ -1,6 +1,6 @@
-<div class="col-md-10" style="height:600px;overflow:auto">
+<div class="col-md-8 col-centered" style="height:600px;padding-top:70px;margin-left:100px">
     <h2>新猫猫上线</h2>
-    <div class="col-md-6 col-centered ">
+    <div class="col-md-6 col-centered">
         <div class="form-box">
             <%= simple_form_for [:admin, @job] do |f| %>
                 <%= f.input :title, label: false, error: '请输入猫猫小名', placeholder: '猫猫小名', required: true, autofocus: true, input_html: { class: "form-control"} %>

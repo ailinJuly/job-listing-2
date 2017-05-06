@@ -1,26 +1,20 @@
-<div class="col-md-12 col-centered" style="padding-top:20px";"height:600px;overflow:auto">
+<div class="col-md-12" style="height:800px;overflow:auto;padding-top:120px">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3>猫猫都在这里
-                <div class="dropdown clearfix pull-right">
-                    <button class="btn btn-default dropdown-toggle" type ="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        猫猫们排队
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-                        <!-- <li>
-                            <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
-                        </li>
-                        <li>
-                            <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
-                        </li> -->
-                        <li>
-                            <%= link_to("按照发表时间排序", jobs_path ) %>
-                        </li>
-                    </ul>
-                </div>
-            </h3>
-            <!-- <div class="panel-body"> -->
+            <h3>猫猫都在这里</h3>
+        </div>
+        <div class="panel-body">
+            <div class="dropdown clearfix pull-right">
+                <button class="btn btn-default dropdown-toggle" type ="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    猫猫们排队
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+                    <li>
+                        <%= link_to("按照发表时间排序", jobs_path ) %>
+                    </li>
+                </ul>
+            </div>
             <table class="table table-boldered">
                 <thead>
                     <tr>
@@ -41,6 +35,9 @@
                     <% end %>
                 </tbody>
             </table>
-            <!-- </div> -->
+            <div class="text-center">
+                <%= will_paginate(@jobs, renderer: BootstrapPagination::Rails) %>
+            </div>
         </div>
     </div>
+</div>

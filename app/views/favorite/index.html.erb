@@ -1,4 +1,4 @@
-<div class="col-md-12 col-centered" style="height:420px;overflow:auto">
+<div class="col-md-12 col-centered" style="height:600px;overflow:auto;padding-top:120px">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3>已收藏的猫猫
@@ -8,14 +8,8 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-                        <!-- <li>
-                                <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
-                            </li>
-                            <li>
-                                <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
-                            </li> -->
                         <li>
-                            <%= link_to("按照发表时间排序", jobs_path ) %>
+                            <%= link_to("按照发表时间排序", favorite_index_path ) %>
                         </li>
                     </ul>
                 </div>
@@ -39,6 +33,10 @@
                         <% end %>
                     </tbody>
                 </table>
+                <div class="text-center">
+                    <%= will_paginate(@jobs, renderer: BootstrapPagination::Rails) %>
+                </div>
             </div>
         </div>
     </div>
+</div>
