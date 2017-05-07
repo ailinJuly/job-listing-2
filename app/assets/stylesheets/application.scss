@@ -293,6 +293,12 @@ padding-left: 70px;
 background-image: url("https://picjumbo.imgix.net/HNCK1551.jpg?q=40&w=1650&sharp=30");
 
 }
+
+.video{
+  width:450px;
+  height: 335px;
+}
+
 //---------Footer---------
 
 footer {
@@ -301,5 +307,9 @@ footer {
 
 footer .footer-below {
     padding: 25px 0;
-    background-color: #233140;
+    background-color: #212121;
+}
+.footer-click {
+    color: #FF6F00;
+
 }

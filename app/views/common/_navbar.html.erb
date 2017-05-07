@@ -34,6 +34,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="/favorite" style="">我收藏的猫咪<i class="fa fa-heart" aria-hidden="true"></i></a></li>
+                                <li role="separator" class="divider"></li>
                                 <li><%= link_to('登出'.html_safe,destroy_user_session_path, method: :delete) %></li>
                             </ul>
                         </li>
@@ -42,7 +43,7 @@
             </div>
         </div>
     </div>
-</nav>
+</nav> -->
 <!-- 弹窗效果 -->
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog" role="document">
