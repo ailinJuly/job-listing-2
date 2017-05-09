@@ -115,7 +115,7 @@ margin-top: auto; margin-right: top;
     margin-bottom: 50px;
 
     .box-inner {
-        background-color: rgba(250, 250, 250, 0.69);
+        background-color: rgba(250,250,250,0.69);
         padding-bottom: 5px;
         margin-top: 150px;
         margin-bottom: 150px;
@@ -153,29 +153,37 @@ margin-top: auto; margin-right: top;
 //---------Content---------
 
 .content-section-a {
-    padding: 50px 0;
-    background-color: #f8f8f8;
+  margin-top: 50px;
+  padding: 320px 0;
+    background-color: rgba(242, 252, 227, 0.04);
 }
 
+
+
+
+
+
 .content-section-b {
-    padding: 50px 0;
+    padding: 320px 0;
     border-top: 1px solid #e7e7e7;
     border-bottom: 1px solid #e7e7e7;
 }
 
+
 .section-heading-spacer {
     float: left;
     width: 200px;
-    border-top: 3px solid #e7e7e7;
+    border-top: 3px solid #e7e7e7
 }
-
 .section-heading {
     margin-bottom: 30px;
+    color: #272C34;
 }
 
 .lead {
     font-size: 18px;
     font-weight: 400;
+      color: #272C34;
 }
 // 弹窗
 @import url(http://fonts.googleapis.com/css?family=Roboto);
@@ -303,6 +311,7 @@ background-image: url("https://picjumbo.imgix.net/HNCK1551.jpg?q=40&w=1650&sharp
 
 footer {
     color: white;
+    padding-top: 50px;
 }
 
 footer .footer-below {
